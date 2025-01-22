@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using AspCoreWebAppMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using TagHelpersDemo.Models;
 
 namespace AspCoreWebAppMVC.Controllers
 {
@@ -12,10 +13,15 @@ namespace AspCoreWebAppMVC.Controllers
         {
             _logger = logger;
         }
-
+        [Route("")]
         public IActionResult Index()
         {
             return View();
+        }
+        [HttpPost]
+        public string Index(Employee e)
+        {
+            return "Name is: "+e.Name+" Age is:  "+e.Age+" Salary is : "+ e.Salary;
         }
         public string Details(int id, string name)
         {

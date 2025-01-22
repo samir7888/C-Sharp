@@ -1,8 +1,23 @@
-﻿@{
+﻿@model TagHelpersDemo.Models.Employee
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <form asp-action="Index" asp-controller="Home" method="post">
+        <label asp-for="Name">Enter Name:</label>
+        <input asp-for="Name" />
+        <br/>
+     <label asp-for="Age">Enter age:</label>
+         <input asp-for="Age" />
+        <br/>
+        <label asp-for="Salary">Enter your Salary:</label>
+        <input asp-for="Salary" />
+        <input type="submit" value="Submit"  />
+    </form>
 </div>
